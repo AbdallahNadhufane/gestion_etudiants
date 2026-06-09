@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter Étudiant</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* 📦 Formulaire carré propre */
+        .form-card {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* 🎨 Titre avec background brown */
+        .form-title {
+            background-color: brown;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* 🔘 Bouton personnalisé */
+        .btn-custom {
+            background-color: #6f4e37; /* brown élégant */
+            color: white;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #5a3e2b;
+        }
+
+        /* 📏 champs un peu plus propres */
+        .form-control {
+            border-radius: 6px;
+        }
+    </style>
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-4 d-flex justify-content-center">
+
+    <div class="col-md-5">
+
+        <div class="card shadow-sm p-3 form-card">
+
+            <div class="form-title">
+                <h4 class="mb-0">Ajouter Étudiant</h4>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="mb-2">
+                    {{ form.nom.label_tag }}
+                    {{ form.nom }}
+                </div>
+
+                <div class="mb-2">
+                    {{ form.prenom.label_tag }}
+                    {{ form.prenom }}
+                </div>
+
+                <div class="mb-2">
+                    {{ form.sexe.label_tag }}
+                    {{ form.sexe }}
+                </div>
+
+                <div class="mb-2">
+                    {{ form.telephone.label_tag }}
+                    {{ form.telephone }}
+                </div>
+
+                <div class="mb-2">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                </div>
+
+                <div class="mb-2">
+                    {{ form.adresse.label_tag }}
+                    {{ form.adresse }}
+                </div>
+
+                <button type="submit" class="btn btn-custom w-100 mt-2">
+                    Enregistrer
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
